@@ -32,4 +32,4 @@ Class CreateCampsTable extends Migration
     {
         Schema::dropIfExists('camps');
     }
-};
+}

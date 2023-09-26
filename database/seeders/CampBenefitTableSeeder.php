@@ -67,6 +67,5 @@ class CampBenefitTableSeeder extends Seeder
     ];
 
       CampBenefit::insert($campBenefits);
-    
     }
 }
