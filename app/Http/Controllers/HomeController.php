@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Checkout;
+use App\Models\User;
 use Auth;
 
 class HomeController extends Controller
 {
     public function dashboard()
-{
-
-    $Checkouts = Checkout::with('camp')->where('user_id',auth::id())->get();
-    return view('user.dashboard', [
-        "checkouts" => $Checkouts
-    ]);
-}
+    {
+        switch (Auth::user()->is_admin) {
+            case true:
+            return redirect(route('admin.dashboard'));
+            break;
+        default:
+            return redirect(route('user.dashboard'));
+            break;
+        }
+    }
 }

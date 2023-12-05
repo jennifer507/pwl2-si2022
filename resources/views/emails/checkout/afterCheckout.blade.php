@@ -1,9 +1,8 @@
 @component('mail::message')
-# Register Camp: {{$Checkout->camp->title}}
+# Register Camp: {{ $checkout->camp->title }}
 
-Hi {{$checkout->user->name}}
-<br>Thankyou For Register on<b>{{$Checkout->camp->title}}</b>,
-please see payment instruction by click the button below!
+Hi {{ $checkout->user->name }},
+<br>Thank you for registering on <b>{{ $checkout->camp->title }}</b>. Please see payment instructions by clicking the button below!
 
 @component('mail::button', ['url' => route('user.checkout.invoice', $checkout->id)])
 Login Here

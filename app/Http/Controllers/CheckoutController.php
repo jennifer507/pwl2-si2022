@@ -16,8 +16,12 @@ use App\Mail\Checkout\AfterCheckout;
 
 class CheckoutController extends Controller
 {
-    public function create(Camp $camp)
+    public function create(Request $request, Camp $camp)
     {
+        if ($camp->isRegistered) {
+            $request->session()->flash('error', "You already registered on {$camp->title} camp.");
+            return redirect(route('user.dashboard'));
+        }
         return view('checkout.create', [
             "camp" => $camp
         ]);
@@ -54,3 +58,4 @@ class CheckoutController extends Controller
         return view('checkout.success');
     }
 }
+

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Requests\User\Checkout;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class Store extends FormRequest
 {
@@ -8,9 +9,10 @@ class Store extends FormRequest
      * Determine if the user is authorized to make this request. @return bool
      */
     public function authorize()
-    {
-        return Auth::check();
-    }
+{
+    return Auth::check();
+}
+
 
     /**
      * Get the validation rules that apply to the request. @return array
@@ -20,7 +22,7 @@ class Store extends FormRequest
         $expiredValidation = date('Y-m',time());
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.Auth::id().',id',
+            'email' => 'required|email|unique:users,email,'. Auth::id() . ',id',
             'occupation' => 'required|string',
             'card_number' => 'required|numeric|digits_between:8,16',
             'expired' => 'required|date|date_format:Y-m|after-or-equal:'.$expiredValidation,

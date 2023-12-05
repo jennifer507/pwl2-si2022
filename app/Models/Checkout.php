@@ -17,6 +17,7 @@ class Checkout extends Model
         'expired',
         'cvc',
         'is_paid',
+        'card_number',
     ];
 
     public function setExpiredAttribute(string $value)

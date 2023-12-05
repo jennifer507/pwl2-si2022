@@ -1,6 +1,6 @@
 @extends('_layouts.app')
 @section('content')
-<section class="dashboard my-5">
+    <section class="dashboard my-5">
         <div class="container">
             <div class="row text-left">
                 <div class=" col-lg-12 col-12 header-wrap mt-4">
@@ -16,10 +16,9 @@
                 @include('components.alert')
                 <table class="table">
                     <tbody>
-                        @foreach($checkout as $checkout)
                         <tr class="align-middle">
                             <td width="18%">
-                                <img src="{{asset('images/item_bootcamp.png')}}"  height="120" alt="">
+                                <img src="{{asset('images/item_bootcamp.png')}}" height="120" alt="">
                             </td>
                             <td>
                                 <p class="mb-2">
@@ -43,7 +42,7 @@
                         </tr>
                         <tr class="align-middle">
                             <td width="18%">
-                                <img src="{{asset('images/item_bootcamp.png')}}"  height="120" alt="">
+                                <img src="{{asset('images/item_bootcamp.png')}}" height="120" alt="">
                             </td>
                             <td>
                                 <p class="mb-2">
@@ -67,7 +66,7 @@
                         </tr>
                         <tr class="align-middle">
                             <td width="18%">
-                                <img src="{{asset('images/item_bootcamp.png')}}"  height="120" alt=" ">
+                                <img src="{{asset('images/item_bootcamp.png')}}" height="120" alt=" ">
                             </td>
                             <td>
                                 <p class=" mb-2 ">
