@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function() {
         Route::get('/', [AdminDashboard::class,'index'])->name('dashboard'); //called by route('user.dashboard)
         Route::post('checkout/{checkout}', [AdminCheckout::class,'update'])->name('checkout.update');
     });
+
+
 });
 
 require_once __DIR__.'/auth.php';

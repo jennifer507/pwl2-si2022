@@ -1,5 +1,4 @@
 @extends('_layouts.app')
-
 @section('content')
     <div class="container-fluid mt-5">
         <div class="row">
@@ -9,7 +8,7 @@
                         My Camps
                     </div>
                     <div class="card-body">
-                        @include('components\alert')
+                        @include('components.alert')
                         <table class="table table-stripped">
                             <thead>
                                 <th>User</th>
@@ -34,14 +33,13 @@
                                             @endif
                                         </td>
                                         <td>
-                                        @if($checkout->is_paid)
+                                      
                                             <form method="post" action="{{route('admin.checkout.update',$checkout->id)}}">
                                                 @csrf 
                                                 <button type="submit" class="btn btn-primary btn-sm">
                                                     Set To Paid
-                                                </button>
+</div>
                                             </form>
-                                        @endif
                                         </td>
                                     </tr>
                                 @empty
