@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RemoveCheckoutTableColumsCardnumberExpiredCvcIspaid extends Migration
+class RemoveCheckoutTableColumnsCardnumberExpiredCvcIspaid extends Migration
 {
     public function up()
     {
