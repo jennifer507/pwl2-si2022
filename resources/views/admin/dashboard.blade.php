@@ -16,7 +16,7 @@
                                 <th>Price</th>
                                 <th>Register Data</th>
                                 <th>Paid Status</th>
-                                <th>Action</th>
+                               <!-- <th>Action</th> -->
                             </thead>
                             <tbody>
                                 @forelse($checkouts as $checkout)
@@ -25,22 +25,25 @@
                                         <td>{{$checkout->camp->title}}</td>
                                         <td>Rp. {{$checkout->camp->price}}</td>
                                         <td>{{$checkout->created_at->format('M d Y')}}</td>
-                                        <td>
+                                        <td>{{$checkout->payment_status}}</td>
+                                      <!--  <td>
                                             @if($checkout->is_paid)
                                                 <span class="badge bg-success">Paid</span>
                                             @else
                                                 <span class="badge bg-warning">Waiting</span>
                                             @endif
-                                        </td>
-                                        <td>
+                                        </td> -->
+                                     <!--   <td>
                                       
                                             <form method="post" action="{{route('admin.checkout.update',$checkout->id)}}">
                                                 @csrf 
                                                 <button type="submit" class="btn btn-primary btn-sm">
                                                     Set To Paid
 </div>
+
                                             </form>
-                                        </td>
+                                            endif
+                                        </td> -->
                                     </tr>
                                 @empty
                                     <tr>

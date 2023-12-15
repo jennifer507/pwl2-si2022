@@ -13,8 +13,8 @@ class Checkout extends Model
     protected $fillable = [
         'user_id',
         'camp_id',
-        'phone',
-        'address',
+        // 'phone',
+        // 'address',
         //'card_id',
         // 'expired',
         // 'cvc',

@@ -30,7 +30,6 @@ Route::middleware('auth')->group(function() {
     Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success')->middleware('ensureUserRole:user');
     Route::get('checkout/{camp:slug}', [CheckoutController::class, 'create'])->name('checkout.create')->middleware('ensureUserRole:user');
     Route::post('checkout/{camp}', [CheckoutController::class, 'store'])->name('checkout.store')->middleware('ensureUserRole:user');
-
     // dashboard
     Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('dashboard/checkout/invoice/{checkout}', [CheckoutController::class, 'invoice'])->name('user.checkout.invoice');
@@ -43,9 +42,6 @@ Route::middleware('auth')->group(function() {
         Route::get('/', [AdminDashboard::class,'index'])->name('dashboard'); //called by route('user.dashboard)
         Route::post('checkout/{checkout}', [AdminCheckout::class,'update'])->name('checkout.update');
     });
-
-
 });
 
-require_once __DIR__.'/auth.php';
-
+require __DIR__.'/auth.php';

@@ -17,7 +17,7 @@ class AddUserTableColumnsPhoneAddress extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['phone', 'address']);
+            $table->dropColumn(['phone','address']);
         });
     }
 }
